@@ -1,24 +1,26 @@
 {
-  "name": "next-bootstrap",
+  "name": "@yiuayiu/next-bootstrap",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "./dist/exports.js",
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": "./dist/exports.js"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "build-library": "rm -rf dist && tsc -p tsconfig.build.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
-    "next": "15.1.4",
-    "react": "^19.0.0",
-    "react-bootstrap": "^2.10.7",
-    "react-dom": "^19.0.0"
-  },
   "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.3",
-    "@eslint/eslintrc": "^3",
+    "@chromatic-com/storybook": "^3.2.4",
+    "@eslint/eslintrc": "^3.2.0",
     "@storybook/addon-essentials": "8.6.0-alpha.0",
     "@storybook/addon-interactions": "8.6.0-alpha.0",
     "@storybook/addon-onboarding": "8.6.0-alpha.0",
@@ -26,19 +28,39 @@
     "@storybook/nextjs": "8.6.0-alpha.0",
     "@storybook/react": "8.6.0-alpha.0",
     "@storybook/test": "8.6.0-alpha.0",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/node": "^22.10.7",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
     "bootstrap": "^5.3.3",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.4",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "15.1.5",
     "eslint-plugin-storybook": "^0.11.2",
+    "next": "^15.1.5",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.7",
+    "react-dom": "^19.0.0",
     "storybook": "8.6.0-alpha.0",
-    "typescript": "^5"
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "next": "^15.1.4",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.7",
+    "react-dom": "^19.0.0"
   },
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "pnpm": {
+    "overrides": {
+      "@yiuayiu/next-bootstrap": "link:",
+      "next-bootstrap": "link:"
+    }
+  },
+  "dependencies": {
+    "@yiuayiu/next-bootstrap": "link:",
+    "next-bootstrap": "link:"
   }
 }
