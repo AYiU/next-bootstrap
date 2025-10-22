@@ -8,7 +8,6 @@ export type loadingState = "" | "loading" | "error" | "done";
 
 export type LoadingButtonType = {
   children: ReactNode;
-  color?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 

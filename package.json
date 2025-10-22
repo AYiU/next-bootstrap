@@ -10,17 +10,16 @@
     ".": "./dist/exports.js"
   },
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -p 5010",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "build-library": "rm -rf dist && tsc -p tsconfig.build.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
-    "@eslint/eslintrc": "^3.2.0",
     "@storybook/addon-essentials": "8.6.0-alpha.0",
     "@storybook/addon-interactions": "8.6.0-alpha.0",
     "@storybook/addon-onboarding": "8.6.0-alpha.0",
@@ -29,16 +28,16 @@
     "@storybook/react": "8.6.0-alpha.0",
     "@storybook/test": "8.6.0-alpha.0",
     "@types/node": "^22.10.7",
-    "@types/react": "^19.0.7",
-    "@types/react-dom": "^19.0.3",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
     "bootstrap": "^5.3.3",
     "eslint": "^9.18.0",
-    "eslint-config-next": "15.1.5",
+    "eslint-config-next": "16.0.0",
     "eslint-plugin-storybook": "^0.11.2",
-    "next": "^15.1.5",
-    "react": "^19.0.0",
+    "next": "16.0.0",
+    "react": "19.2.0",
     "react-bootstrap": "^2.10.7",
-    "react-dom": "^19.0.0",
+    "react-dom": "19.2.0",
     "storybook": "8.6.0-alpha.0",
     "typescript": "^5.7.3"
   },
@@ -56,11 +55,14 @@
   "pnpm": {
     "overrides": {
       "@yiuayiu/next-bootstrap": "link:",
-      "next-bootstrap": "link:"
+      "next-bootstrap": "link:",
+      "@types/react": "19.2.2",
+      "@types/react-dom": "19.2.2"
     }
   },
   "dependencies": {
     "@yiuayiu/next-bootstrap": "link:",
     "next-bootstrap": "link:"
-  }
+  },
+  "packageManager": "pnpm@10.1.0+sha512.c89847b0667ddab50396bbbd008a2a43cf3b581efd59cf5d9aa8923ea1fb4b8106c041d540d08acb095037594d73ebc51e1ec89ee40c88b30b8a66c0fae0ac1b"
 }
